@@ -21,9 +21,9 @@ export const CardWrapper = styled.div`
   border-radius: 27px;
 `
 export const WrapCard = styled.div`
-  // background: gray;
-  display: flex;
+  display:flex;
   margin:25px;
+  flex-direction: ${props => props.col ? 'column' : 'row'};
 `
 
 export const DeleteButton = styled.div`
@@ -32,4 +32,16 @@ export const DeleteButton = styled.div`
 
 export const EditButton = styled.div`
   background: gray;
+`
+
+export const MainWrapper = styled.div`
+  background: blue;
+  margin: 20px;
+  display: flex;
+  flex-direction: ${props => props.col ? 'row' : 'column'};
+`
+
+export const InsideWrapper = styled.div`
+  display: flex;
+  flex-direction: ${props => props.col ? 'row' : 'column'};
 `

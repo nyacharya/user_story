@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {CardWrapper, Button, WrapCard, DeleteButton, EditButton} from './commons'
+import {CardWrapper, Button, WrapCard, DeleteButton, EditButton, MainWrapper, InsideWrapper} from './commons'
 import {cardColor, STATUS, sampleData, COLUMNS} from './commons/constants'
 import CreateStory from './createStory'
 import CreateColumn from "./createColumn";
@@ -12,6 +12,7 @@ export default function Main(){
   const [addColumn, toggleAddColumn] = useState(false)
   const [editList, setEditList] = useState(null)
   const [columns, setColumns] = useState(COLUMNS)
+  const [displayhor, setHor] = useState(false)
 
 
   function changeStatus(params, status) {
@@ -36,6 +37,7 @@ export default function Main(){
     toggleList(!showList)
   }
 
+
   function displayCards(data){
   return <CardWrapper color={cardColor[data.status]}>
     <h1>{data.task}</h1>
@@ -48,19 +50,19 @@ export default function Main(){
   }
 
   function orderByColumn(){
-    return COLUMNS.map(col => <div style={{background: 'blue', margin: '10px'}}>
+    return COLUMNS.map(col => <MainWrapper col={displayhor}>
       <h3> {col} </h3>
-      <div>
+      <InsideWrapper col={displayhor}>
       {story.sort(function(a,b){
         return a.priority - b.priority}).map(value => {
         if(value.column == col)
           return displayCards(value)
         })}
-    </div>
-      </div>)
+    </InsideWrapper>
+      </MainWrapper>)
   }
 
-  return <div><WrapCard>
+  return <div><WrapCard col={displayhor}>
     {showList ? orderByColumn() : <CreateStory  
     toggleList={toggleShowList} 
     showList={showList} 
@@ -83,5 +85,8 @@ export default function Main(){
   columns={columns}
   /> : <button onClick={() => toggleAddColumn(!addColumn)} > Add Card </button>}
   <button onClick={() => toggleShowList()} > {showList ? 'Add new Story' : 'Cancel'}</button>
+
+    <br/>
+    <button onClick={() => setHor(!displayhor)} >Change Orientation</button>
   </div>
 }
