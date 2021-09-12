@@ -44,13 +44,15 @@ export default function Main(){
     <h3>priority: {data.priority}</h3>
       {data.task} <div onClick> </div>
       {STATUS.filter(item => item != data.status).map(value => <Button onClick={() => changeStatus(data, value)}>{value}</Button>)}
-      <DeleteButton onClick={() => deleteCard(data)}> Delete </DeleteButton>
+      <DeleteButton onClick={() => deleteCard(data)}> 
+        Delete 
+      </DeleteButton>
       <EditButton onClick={() => editCard(data)}> Edit </EditButton>
     </CardWrapper>
   }
 
   function orderByColumn(){
-    return COLUMNS.map(col => <MainWrapper col={displayhor}>
+    return columns.map(col => <MainWrapper col={displayhor}>
       <h3> {col} </h3>
       <InsideWrapper col={displayhor}>
       {story.sort(function(a,b){
@@ -72,10 +74,6 @@ export default function Main(){
     columns = {columns}
     setEditList={setEditList}
      />}
-     
-    {/* Main page here
-    {story.map(value => displayCards(value))} */}
-    
 
   </WrapCard>
   {addColumn ? <CreateColumn 

@@ -47,9 +47,9 @@ export const sampleData = [
 ]
 
 export const cardColor = {
-  completed: 'green',
-  initiated: 'yellow',
-  backlog: 'red'
+  completed: '#008070',
+  initiated: '#00ff51ba',
+  backlog: '#ff000070'
 }
 
 export const COLUMNS = ['first', 'second', 'third']

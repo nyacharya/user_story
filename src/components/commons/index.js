@@ -13,8 +13,7 @@ export const Button = styled.button`
 `;
 
 export const CardWrapper = styled.div`
-  height: 300px;
-  width: 250px;
+  width: 265px;
   background: ${props => props.color || 'blue'};
   font: 12px;
   margin: 20px;
@@ -28,14 +27,21 @@ export const WrapCard = styled.div`
 
 export const DeleteButton = styled.div`
   background: red;
+  width: 120px;
+  margin: 10px;
+  padding: 10px;
 `
 
 export const EditButton = styled.div`
   background: gray;
+  width: 120px;
+  margin: 10px;
+  padding: 10px;
 `
 
 export const MainWrapper = styled.div`
-  background: blue;
+  background: cornflowerblue;
+  border-radius: 39px;
   margin: 20px;
   display: flex;
   flex-direction: ${props => props.col ? 'row' : 'column'};
