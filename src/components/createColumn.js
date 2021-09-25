@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Button} from './commons'
 
 export default function CreateColumn(props){
 
@@ -15,8 +16,8 @@ export default function CreateColumn(props){
   return<div>
     <form>
       <input onChange={(e) => setNewColumn(e.target.value)} type="text" name="task" value={newColumn} />
-      <button onClick={(e) => setValue(e)} > Add </button>
-      <button onClick={(e) => props.toggleAddColumn(!props.addColumn)} > Cancel </button>
+      <Button color="#00ce66" onClick={(e) => setValue(e)} > Add </Button>
+      <Button color="#bd1c40" primary onClick={(e) => props.toggleAddColumn(!props.addColumn)} > Cancel </Button>
     </form>
   </div>
 }

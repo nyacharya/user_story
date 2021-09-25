@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 export const Button = styled.button`
   display: inline-block;
-  color: palevioletred;
+  color: ${props => props.color || 'palevioletred'};
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid palevioletred;
+  border: 2px solid ${props => props.color || 'palevioletred'};
   border-radius: 3px;
   display: inline-block;
   cursor: pointer;

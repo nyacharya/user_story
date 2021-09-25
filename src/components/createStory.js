@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {cardColor, STATUS, sampleData} from './commons/constants'
+import {Button} from './commons'
 
 export default function CreateStory(props){
 
@@ -82,7 +83,7 @@ export default function CreateStory(props){
       <br/>
       <div>{currentTime}</div>
       <br/>
-      <button onClick={(e) => setValue(e)} disabled={!isEnabled} > Submit </button>
+      <Button color="#00ce66" onClick={(e) => setValue(e)} disabled={!isEnabled} > Submit </Button>
     </form>
   </div>
 }

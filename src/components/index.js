@@ -81,10 +81,10 @@ export default function Main(){
   toggleAddColumn={toggleAddColumn} 
   setColumns={setColumns}
   columns={columns}
-  /> : <button onClick={() => toggleAddColumn(!addColumn)} > Add Card </button>}
-  <button onClick={() => toggleShowList()} > {showList ? 'Add new Story' : 'Cancel'}</button>
+  /> : <Button color="cadetblue" onClick={() => toggleAddColumn(!addColumn)} > Add Card </Button>}
+  <Button color="cadetblue" onClick={() => toggleShowList()} > {showList ? 'Add new Story' : 'Cancel'}</Button>
 
     <br/>
-    <button onClick={() => setHor(!displayhor)} >Change Orientation</button>
+    <Button color="cadetblue" onClick={() => setHor(!displayhor)} >Change Orientation</Button>
   </div>
 }
